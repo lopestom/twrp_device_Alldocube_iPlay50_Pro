@@ -86,14 +86,14 @@ jobs:
        PATH=~/bin:$PATH
        cd twrp
        export ALLOW_MISSING_DEPENDENCIES=true && source build/envsetup.sh &&lunch twrp_T1030M-eng && mka $TARGET -j$(nproc --all)
-       cp  out/target/product/T1030M/vendor_boot.img    out/target/product/T1030M/vendor_boot-T1030M-$(date +"%Y%m%d").img  
+       cp  out/target/product/T1030M/vendor_boot.img    out/target/product/T1030M/vendor_boot-iPlay50_Pro-$(date +"%Y%m%d").img  
              
     - name: Release recovery image
       uses: softprops/action-gh-release@v1
       env:
        GITHUB_TOKEN: ${{ secrets.TEST }}
       with:
-       tag_name: Alldocube_iPlay50_Pro-T1030M
-       name: TWRP37x_13
+       tag_name: Alldocube_iPlay50_Pro
+       name: TWRP37x_13_NoCrypt
        files: | 
          twrp/out/target/product/T1030M/*boot*.img
