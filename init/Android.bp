@@ -1,0 +1,14 @@
+cc_library_static {
+    name: "libinit_T1030M",
+    header_libs: [
+        "libbase_headers",
+    ],
+    cflags: [
+        "-Wall",
+    ],
+    static_libs: [
+        "libbase",
+    ],
+    srcs: ["init_T1030M.cpp"],
+    recovery_available: true,
+}
